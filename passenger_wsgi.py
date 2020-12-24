@@ -7,9 +7,10 @@ template_path = os.path.join(project_root, 'mkstowe/templates')
 static_path = os.path.join(project_root, 'mkstowe/static')
 app = Flask(__name__, template_folder=template_path, static_folder=static_path)
 
-@app.route('/')
 
-def index():
-    return 'Hello from flask'
+# @app.route('/')
+# def index():
+#     return 'Hello from flask'
+
 
 application = app
