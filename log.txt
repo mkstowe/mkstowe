@@ -493,3 +493,7 @@ SyntaxError: invalid syntax
  * Restarting with stat
  * Debugger is active!
  * Debugger PIN: 331-048-267
+ * Detected change in '/home/michael/code/mkstowe/mkstowe/views/skills.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 331-048-267
