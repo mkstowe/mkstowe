@@ -66,10 +66,11 @@
 </nav>
 
 <script>
-    $('.menu a').each(function(){
+    $('.menu a').each(function(index, value){
+        console.log(`${index}: ${value}`);
         if ( this.textContent === "{{ title }}") {
             this.attr('id', 'current');
-            console.log(this.textContent);
+            console.log("here");
         } else {
             this.removeAttr('id');
         }
