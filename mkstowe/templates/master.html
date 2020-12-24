@@ -66,8 +66,8 @@
 </nav>
 
 <script>
-    $('.menu a').each(function(index, value){
-        console.log(`${index}: ${value}`);
+    $('.item_menu').each(function(index, value){
+        console.log(`ahhh${index}: ${value}`);
         if ( this.textContent === "{{ title }}") {
             this.attr('id', 'current');
             console.log("here");
