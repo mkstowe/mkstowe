@@ -52,7 +52,6 @@
 
 <nav class="menu">
     <a class="item_menu" href="/">Home</a>
-    <a class="item_menu" href="/test/">test</a>
     <a class="item_menu" href="/skills/">Skills</a>
     <a class="item_menu" href="/projects/">Projects</a>
     <a class="item_menu" href="/experience/">Experience</a>
@@ -70,6 +69,7 @@
     $('.menu a').each(function(){
         if ( this.textContent === "{{ title }}") {
             this.attr('id', 'current');
+            console.log(this.textContent);
         } else {
             this.removeAttr('id');
         }
