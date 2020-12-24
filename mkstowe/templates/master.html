@@ -29,6 +29,16 @@
         gtag('js', new Date());
         gtag('config', 'UA-143308122-1');
     </script>
+
+    <script>
+    $(document).ready(function() {
+        $('.item_menu').each(function () {
+            if (this.textContent === "{{ title }}") {
+                $(this).attr('id', 'current');
+            }
+        });
+    });
+</script>
 </head>
 
 <body>
@@ -58,16 +68,6 @@
         </a>
     </div>
 </nav>
-
-<script>
-    $(document).ready(function() {
-        $('.item_menu').each(function () {
-            if (this.textContent === "{{ title }}") {
-                $(this).attr('id', 'current');
-            }
-        });
-    });
-</script>
 
 <main>
     {% include load_file %}
