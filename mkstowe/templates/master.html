@@ -30,11 +30,11 @@
         gtag('config', 'UA-143308122-1');
     </script>
 
-    <script>
-        $(document).ready(function(){
-            $('main').load("{{ load_file }}");
-        });
-    </script>
+<!--    <script>-->
+<!--        $(document).ready(function(){-->
+<!--            $('main').load("{{ load_file }}");-->
+<!--        });-->
+<!--    </script>-->
 </head>
 
 <body>
@@ -52,6 +52,7 @@
 
 <nav class="menu">
     <a class="item_menu" href="/">Home</a>
+    <a class="item_menu" href="/test/">test</a>
     <a class="item_menu" href="/skills/">Skills</a>
     <a class="item_menu" href="/projects/">Projects</a>
     <a class="item_menu" href="/experience/">Experience</a>
@@ -75,7 +76,9 @@
     });
 </script>
 
-<main></main>
+<main>
+    {% include load_file %}
+</main>
 
 <footer id="copyright">
     <p>&copy; {{ now.year }} Michael Stowe</p>
