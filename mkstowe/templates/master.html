@@ -29,12 +29,6 @@
         gtag('js', new Date());
         gtag('config', 'UA-143308122-1');
     </script>
-
-<!--    <script>-->
-<!--        $(document).ready(function(){-->
-<!--            $('main').load("{{ load_file }}");-->
-<!--        });-->
-<!--    </script>-->
 </head>
 
 <body>
@@ -73,7 +67,7 @@
                 $(this).attr('id', 'current');
                 console.log("here");
             } else {
-                this.removeAttr('id');
+                $(this).removeAttr('id');
             }
         });
     });
