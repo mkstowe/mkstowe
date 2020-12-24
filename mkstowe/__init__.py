@@ -1,19 +1,13 @@
-"""mkstowe.com package initializer."""
-import flask
-from datetime import datetime
-
-# app is a single object used by all the code modules in this package
-app = flask.Flask(__name__)  # pylint: disable=invalid-name
-
-# Read settings from config module (mkstowe/config.py)
-app.config.from_object('mkstowe.config')
-
-app.config.from_envvar('MKSTOWE_SETTINGS', silent=True)
+import os
+import sys
 
 
-@app.context_processor
-def inject_now():
-    return {'now': datetime.utcnow()}
+sys.path.insert(0, os.path.dirname(__file__))
 
 
-import mkstowe.views  # noqa: E402  pylint: disable=wrong-import-position
+def application(environ, start_response):
+    start_response('200 OK', [('Content-Type', 'text/plain')])
+    message = 'It works!\n'
+    version = 'Python %s\n' % sys.version.split()[0]
+    response = '\n'.join([message, version])
+    return [response.encode()]
