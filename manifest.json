@@ -1,0 +1,15 @@
+{
+  "short_name": "Michael Stowe",
+  "name": "Michael Stowe",
+  "icons": [
+    {
+      "src": "media/terminal.svg",
+      "type": "image/svg",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "https://mkstowe.github.io/",
+  "background_color": "#C90000",
+  "display": "browser",
+  "theme_color": "#000000"
+}

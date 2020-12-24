@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Metroid | Michael Stowe</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='media/favicon.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='unity/metroid/TemplateData/style.css') }}">
+    <script src="{{ url_for('static', filename='unity/metroid/TemplateData/UnityProgress.js') }}"></script>
+    <script src="{{ url_for('static', filename='unity/metroid/Build/UnityLoader.js') }}"></script>
+    <script>
+      var unityInstance = UnityLoader.instantiate("unityContainer", "{{ url_for('static', filename='unity/metroid/Build/Web.json') }}", {onProgress: UnityProgress});
+    </script>
+  </head>
+  <body>
+    <div class="webgl-content">
+      <div id="unityContainer" style="width: 800px; height: 750px"></div>
+      <div class="footer">
+        <div class="webgl-logo"></div>
+        <div class="fullscreen" onclick="unityInstance.SetFullscreen(1)"></div>
+        <div class="title">Metroid</div>
+      </div>
+    </div>
+  </body>
+</html>
