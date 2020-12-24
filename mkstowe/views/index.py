@@ -15,6 +15,6 @@ def index():
 
 @mkstowe.app.route('/test/', methods=['GET'])
 def test():
-    context = {"title": "Home", "desc": "Home/About page for Michael Stowe", "load_file": "index.html"}
+    context = {"title": "test", "desc": "test page for Michael Stowe", "load_file": "test.html"}
     return flask.render_template("master.html", **context)
 

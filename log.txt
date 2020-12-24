@@ -477,3 +477,11 @@ SyntaxError: invalid syntax
 127.0.0.1 - - [24/Dec/2020 03:26:24] "[33mGET /skills/main.js HTTP/1.1[0m" 404 -
 127.0.0.1 - - [24/Dec/2020 03:26:26] "[37mGET / HTTP/1.1[0m" 200 -
 127.0.0.1 - - [24/Dec/2020 03:26:26] "[33mGET /main.js HTTP/1.1[0m" 404 -
+ * Detected change in '/home/michael/code/mkstowe/mkstowe/views/index.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 331-048-267
+ * Detected change in '/home/michael/code/mkstowe/mkstowe/views/index.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 331-048-267

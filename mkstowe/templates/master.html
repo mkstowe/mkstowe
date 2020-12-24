@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <meta content="{{ desc }}" name="Description">
-    <title>{{ title }}</title>
+    <title>{{ title }} | Michael Stowe</title>
 
     <link rel="icon" href="{{ url_for('static', filename='media/favicon.png') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
@@ -67,7 +67,7 @@
 
 <script>
     $('.menu a').each(function(){
-        if ( this.textContent === {{ title }}) {
+        if ( this.textContent === "{{ title }}") {
             this.attr('id', 'current');
         } else {
             this.removeAttr('id');
