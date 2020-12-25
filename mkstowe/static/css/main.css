@@ -52,6 +52,23 @@ main a {
   color: #1155CCFF;
   text-decoration: none;
 }
+main h2 {
+  font-size: 30px;
+}
+main h3 {
+  font-size: 20px;
+}
+main h4 {
+  font-size: 18px;
+  font-weight: 400;
+}
+main .seg {
+  padding-bottom: 30px;
+}
+main .seg:not(:first-of-type) {
+  padding-top: 30px;
+  border-top: 3px solid #000000;
+}
 
 img {
   display: block;
@@ -180,21 +197,6 @@ figure {
   color: #1155CCFF;
 }
 
-.metroid {
-  width: 870px;
-  height: 870px;
-}
-
-.timber {
-  width: 1000px;
-  height: 700px;
-}
-
-.mission-o-possumble {
-  width: 1000px;
-  height: 700px;
-}
-
 @media all and (min-width: 480px) {
   header {
     font-size: 20px;
@@ -216,7 +218,7 @@ figure {
 @media all and (min-width: 900px) {
   header {
     position: relative;
-    left: 30%;
+    left: 25%;
     width: 70%;
     height: 10%;
     font-size: 40px;
@@ -233,7 +235,7 @@ figure {
     display: inline-block;
     position: fixed;
     top: 50px;
-    left: 10%;
+    left: 5%;
     width: 15%;
   }
   .icon img {
@@ -248,12 +250,16 @@ figure {
 
   main {
     top: 10%;
-    left: 25%;
-    width: 45%;
+    left: 20%;
+    width: 55%;
     height: 90%;
     border-top: 3px solid #000000;
     border-left: 3px solid #000000;
     margin-left: 5%;
+  }
+  main #content {
+    width: 90%;
+    margin-left: 20px;
   }
   main img {
     display: block;
@@ -273,7 +279,7 @@ figure {
   nav.menu {
     position: fixed;
     top: 175px;
-    left: 10%;
+    left: 5%;
     width: 15%;
     height: 100%;
     text-align: center;
@@ -301,12 +307,13 @@ figure {
     width: 100%;
   }
 
-  .pyro {
-    margin-left: 20px;
-  }
-
   #group {
     width: 90%;
+  }
+
+  .media_left {
+    float: left;
+    margin-right: 30px;
   }
 }
 
