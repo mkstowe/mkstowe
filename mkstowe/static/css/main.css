@@ -26,7 +26,7 @@ header {
 }
 header h1 {
   height: 50%;
-  margin-left: 50px;
+  margin-left: 30px;
 }
 header a {
   color: #1155CCFF;
@@ -45,8 +45,11 @@ main {
   font-family: "Roboto", sans-serif;
   font-size: 18px;
   padding-left: 10px;
-  margin: 0 auto 5%;
+  margin: 0 auto 150px;
   overflow: auto;
+}
+main p {
+  line-height: 1.5;
 }
 main a {
   color: #1155CCFF;
@@ -61,6 +64,9 @@ main h3 {
 main h4 {
   font-size: 18px;
   font-weight: 400;
+}
+main li {
+  margin-bottom: 3px;
 }
 main .seg {
   padding-bottom: 30px;
@@ -111,11 +117,11 @@ header > .top a.menu_icon:hover i, header > .top a.menu_icon:active i {
 }
 
 .menu {
-  position: absolute;
+  position: fixed;
   z-index: 1;
   top: -110%;
   width: 100%;
-  min-height: calc(100vh - 121px);
+  min-height: 100vh;
   transition: 0.5s all;
   background-color: #FFFFFF;
   text-transform: uppercase;
@@ -186,15 +192,19 @@ figure {
   padding: 0;
 }
 
-.resume a, .resume a:active {
-  color: #000000;
-  background-color: #FFFFFF;
+#about_me {
+  margin-bottom: 50px;
 }
 
 #resume_link {
-  display: inline;
-  float: right;
+  display: inline-block;
+  margin-right: 5%;
+  margin-top: 50px;
   color: #1155CCFF;
+}
+
+#resume {
+  display: none;
 }
 
 @media all and (min-width: 480px) {
@@ -314,6 +324,30 @@ figure {
   .media_left {
     float: left;
     margin-right: 30px;
+    margin-top: 10px;
+  }
+
+  #me {
+    width: 35%;
+    margin-top: 75px;
+  }
+
+  #other_info {
+    width: 60%;
+    float: left;
+  }
+
+  #resume {
+    display: block;
+    margin-left: -25px;
+    margin-top: -25px;
+    width: 80%;
+    min-height: 1100px;
+    border: none;
+  }
+
+  #resume_link {
+    float: right;
   }
 }
 

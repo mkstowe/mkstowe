@@ -9,5 +9,6 @@ import mkstowe
 
 @mkstowe.app.route('/resume/', methods=['GET'])
 def resume():
-    """Display /resume/ route."""
-    return flask.render_template("resume.html")
+    """Display / route."""
+    context = {"title": "Resume", "desc": "Resume page for Michael Stowe", "load_file": "resume.html"}
+    return flask.render_template("master.html", **context)

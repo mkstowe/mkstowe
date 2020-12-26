@@ -1,24 +1,28 @@
 <div id="content">
-    <h2>About Me</h2>
-    <p>Hi, I'm Michael. I'm currently a Senior at the University of Michigan
-        studying Computer Science. I am working toward my goal of applying my
-        knowledge of computer science to the machine learning industry, focusing on
-        studying human behavior to devise programs that can help better society. During
-        my time in college, I strive to gain skills and experience by working on
-        projects that are related to coding and engineering in general, as well as
-        honing the skills that apply more to my creative side.</p>
-    <br>
-    <h2>Here's some more information about me that you didn't ask for:</h2>
-    <ul>
-        <li>I have a cat named Frankie</li>
-        <li>I love all things horror</li>
-        <li>I occasionally eat peanut butter straight from the jar</li>
-        <li>I think that birds are the best category of animal</li>
-        <li>I can say (with at least some accuracy) "I eat small children" in
-            eleven languages</li>
-        <li>I despise hot weather</li>
-        <li>I listen to a lot of metal and punk music</li>
-        <li>I play guitar</li>
-        <li>I can't whistle</li>
-    </ul>
+    <div id="about_me">
+        <h2>About Me</h2>
+        <p>Hi, I'm Michael. I'm currently a Senior at the University of Michigan
+            studying Computer Science. I am working toward my goal of applying my
+            knowledge of machine learning to the video game industry. During
+            my time in college, I have striven to gain skills and experience by working on
+            projects that are effective at combining my love of coding with my more creative side.
+        </p>
+        <a href="/resume/">See my resume here!</a>
+    </div>
+
+    <div id="other_info">
+        <h2>Here's some more information about me that you didn't ask for:</h2>
+        <ul>
+            <li>I have a cat named Frankie</li>
+            <li>I love all things horror</li>
+            <li>I occasionally eat peanut butter straight from the jar</li>
+            <li>I think that opossums and squirrels are the best animals (other than Frankie)</li>
+            <li>I despise hot weather</li>
+            <li>I listen to a lot of metal and punk music</li>
+            <li>I love to cook and bake</li>
+            <li>I can't whistle</li>
+            <li>I have a love for plants</li>
+        </ul>
+    </div>
+    <img src="{{ url_for('static', filename='media/me.png') }}" id="me" />
 </div>

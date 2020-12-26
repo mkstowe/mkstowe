@@ -12,4 +12,3 @@ def index():
     """Display / route."""
     context = {"title": "Home", "desc": "Home/About page for Michael Stowe", "load_file": "index.html"}
     return flask.render_template("master.html", **context)
-
