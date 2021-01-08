@@ -31,14 +31,14 @@
     </script>
 
     <script>
-    $(document).ready(function() {
-        $('.item_menu').each(function () {
-            if (this.textContent === "{{ title }}") {
-                $(this).attr('id', 'current');
-            }
+        $(document).ready(function() {
+            $('.item_menu').each(function () {
+                if (this.textContent === "{{ title }}") {
+                    $(this).attr('id', 'current');
+                }
+            });
         });
-    });
-</script>
+    </script>
 </head>
 
 <body>

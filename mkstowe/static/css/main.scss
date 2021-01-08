@@ -15,7 +15,7 @@ footer, header, hgroup, menu, nav, section {
 $white: #FFFFFF;
 $black: #000000;
 $red: #C90000;
-$blue: #1155CCFF;
+$blue: #1155CC;
 $accent-color: $blue;
 
 $title-font: grotesk;
@@ -24,7 +24,7 @@ $main-font: 'Roboto';
 
 $border: 3px solid $black;
 $border-test: 1px solid green;
-$trans: 200ms;
+$trans: 200ms all;
 
 
 // ==========================================================================

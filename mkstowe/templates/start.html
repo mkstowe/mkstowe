@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>~</title>
+    <link href="{{ url_for('static', filename='media/favicon.png') }}" rel="icon">
+    <link href="{{ url_for('static', filename='css/start.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ url_for('static', filename='css/normalize.css') }}" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<div id="main_window">
+    <div id="header">
+        <!--			<img id=leftImg src="assets/img/image.png" class="image" alt="" />-->
+        <h1 class="title">Welcome, Michael</h1>
+        <div id="datetime"></div>
+    </div>
+
+    <div id="web_search">
+        <form action="https://google.com/search" autocomplete="off" method="GET">
+            <label for="q">></label>
+            <input autofocus
+                   id="q"
+                   name="q"
+                   placeholder="search..."
+                   type="search">
+        </form>
+    </div>
+
+
+    <div id="links">
+        <nav>
+            <div id=links_container>
+                <ul>
+                    <li class="subtitle">Frequent</li>
+                    <li><a href="https://mail.google.com/mail/u/0/?pli=1#inbox" target="_blank">Gmail</a></li>
+                    <li><a href="https://www.reddit.com" target="_blank">Reddit</a></li>
+                    <li>
+                        <a href="https://www.notion.so/mkstowe/1723590287614bc39e4b02266c9e0e04?v=c780959582f44e6885c14862175d8545"
+                           target="_blank">Notion</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="subtitle">School</li>
+                    <li><a href="https://umich.instructure.com/" target="_blank">Canvas</a></li>
+                    <li><a href="https://piazza.com" target="_blank">Piazza</a></li>
+                    <li><a href="https://wolverineaccess.umich.edu/" target="_blank">MaizeLink</a></li>
+                    <!--					<li><a href="https://materialsresearch.umich.edu/" target="_blank">MMRI</a></li>-->
+                </ul>
+                <ul>
+                    <li class="subtitle">Portfolio</li>
+                    <li><a href="https://github.com/" target="_blank">Github</a></li>
+                    <li><a href="https://linkedin.com/in/mkstowe" target="_blank">Linkedin</a></li>
+                    <li><a href="https://mkstowe.com" target="_blank">Me</a></li>
+                </ul>
+                <ul>
+                    <li class="subtitle">Media</li>
+                    <li><a href="https://www.netflix.com" target="_blank">Netflix</a></li>
+                    <li><a href="https://hulu.com" target="_blank">Hulu</a></li>
+                    <li><a href="https://youtube.com" target="_blank">Youtube</a></li>
+                </ul>
+                <ul>
+                    <li class="subtitle">Others</li>
+                    <li><a href="https://amazon.com" target="_blank">Amazon</a></li>
+                    <li><a href="https://www.imdb.com/" target="_blank">IMDB</a></li>
+                    <li><a href="https://thetrove.is/Books/Pathfinder%20%5Bmulti%5D/2nd%20Edition/" target="_blank">Pathfinder</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</div>
+
+<script src="{{ url_for('static', filename='js/start.js') }}" type="text/javascript"></script>
+</body>
+</html>
