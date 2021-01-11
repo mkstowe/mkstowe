@@ -11,7 +11,7 @@
 body {
   background-color: #282828;
   font-family: DM, monospace;
-  color: #f0dfaf;
+  color: #fbf1c7;
   transition: 200ms all;
 }
 
@@ -51,12 +51,12 @@ form input[type=search] {
   font: inherit;
   margin-left: 25px;
   width: 95%;
-  color: #f0dfaf;
+  color: #fbf1c7;
   transition: all 0.2s;
 }
 
 form label {
-  color: #f0dfaf;
+  color: #fbf1c7;
   position: absolute;
   transition: all 0.4s;
 }
@@ -72,20 +72,20 @@ form:focus-within input::placeholder {
 }
 #links_container li, #links_container a {
   padding: 3px 0;
-  color: #DCDCCC;
+  color: #fbf1c7;
   text-decoration: none;
   transition: all 0.4s;
   font-size: 1vw;
 }
 #links_container a:hover {
-  color: #BD9980;
+  color: #83a598;
   transition: 200ms all;
 }
 
 .subtitle {
   margin-bottom: 5px;
   font-weight: bold;
-  color: #BD9980 !important;
+  color: #83a598 !important;
   font-size: 1.2vw !important;
 }
 
