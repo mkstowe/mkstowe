@@ -15,33 +15,35 @@ body {
   transition: 200ms all;
 }
 
-ul {
-  list-style-type: none;
-  text-align: left;
-  padding: 2px 30px 2px 0;
-}
-
 #main_window {
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  transition: all 0.25s;
+  width: 95%;
+  margin: 0 auto;
 }
 
 #header {
-  margin-bottom: 30px;
+  width: 100%;
+  margin: 0 auto 30px auto;
+}
+#header h1 {
+  font-weight: bold;
+  font-style: italic;
+}
+#header #datetime {
+  width: 100%;
+  font-size: 3vw;
+}
+#header #datetime #time {
+  font-size: 6vw;
+}
+#header #datetime #date {
+  font-size: 4vw;
+}
+#header #datetime #sep {
+  display: none;
 }
 
-#datetime {
-  font-size: 2vw;
-}
-
-form {
-  margin: 1em 0;
-  position: relative;
+#websearch {
+  width: 10%;
 }
 
 form input[type=search] {
@@ -50,9 +52,7 @@ form input[type=search] {
   box-sizing: border-box;
   font: inherit;
   margin-left: 25px;
-  width: 95%;
   color: #fbf1c7;
-  transition: all 0.2s;
 }
 
 form label {
@@ -68,49 +68,68 @@ form:focus-within input::placeholder {
 #links_container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  flex-direction: row;
 }
-#links_container li, #links_container a {
+#links_container .link_block {
+  width: 150px;
+  margin-top: 30px;
+  padding-right: 30px;
+}
+#links_container .link_block h3 {
+  color: #83a598;
+}
+#links_container .link_block a {
+  font-size: min(4vw, 20px);
+  display: inline-block;
   padding: 3px 0;
   color: #fbf1c7;
   text-decoration: none;
-  transition: all 0.4s;
-  font-size: 1vw;
-}
-#links_container a:hover {
-  color: #83a598;
   transition: 200ms all;
 }
-
-.subtitle {
-  margin-bottom: 5px;
-  font-weight: bold;
-  color: #83a598 !important;
-  font-size: 1.2vw !important;
-}
-
-.title {
-  margin-top: 0;
-  margin-bottom: 10px;
-  font-weight: bold;
-  font-style: italic;
-  font-size: 3vw;
+#links_container .link_block a:hover {
+  color: #83a598;
+  transition: 200ms all;
 }
 
 /*
   Media queries
 */
-@media (max-width: 950px) {
-  .title {
-    font-size: 5vw;
+@media (min-width: 550px) {
+  #main_window {
+    width: 45%;
+    min-width: 700px;
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -60%);
+    transform: translate(-50%, -60%);
   }
 
-  #datetime {
-    font-size: 3vw;
+  #header {
+    line-height: 1;
+  }
+  #header h1 {
+    font-size: 56px !important;
+    margin: 0 !important;
+  }
+  #header #datetime #date, #header #datetime #time, #header #datetime #sep {
+    display: inline-block !important;
+    font-size: 32px !important;
   }
 
-  #links_container li, #links_container a {
-    font-size: 1.5vw;
+  #links_container {
+    justify-content: space-between;
+  }
+  #links_container .link_block {
+    padding: 0;
+  }
+  #links_container .link_block h3 {
+    font-size: 24px !important;
+    margin: 0 0 10px 0;
+  }
+  #links_container .link_block a {
+    font-size: 18px !important;
   }
 }
 

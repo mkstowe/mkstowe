@@ -70,7 +70,7 @@ function displayClock() {
     const minute = ('0' + date.getMinutes()).slice(-2);
     let hour = String(date.getHours());
     let ampm = '';
-    let daySuffix;
+    let daySuffix = "th";
 
     if (format_12hour) {
         ampm = hour >= 12 ? ' pm' : ' am';
@@ -78,21 +78,24 @@ function displayClock() {
         hour = hour ? hour : 12; //show mod 0 as 12
     }
 
-    switch (date.getDate() % 10) {
-        case 1:
-            daySuffix = "st";
-            break;
-        case 2:
-            daySuffix = "nd";
-            break;
-        case 3:
-            daySuffix = "rd";
-            break;
-        default:
-            daySuffix = "th";
+    if (date.getDate() < 4 || date.getDate() > 20) {
+        switch (date.getDate() % 10) {
+            case 1:
+                daySuffix = "st";
+                break;
+            case 2:
+                daySuffix = "nd";
+                break;
+            case 3:
+                daySuffix = "rd";
+                break;
+            default:
+                daySuffix = "th";
+        }
     }
 
-    document.getElementById('datetime').innerText = `${hour}:${minute}${ampm} | ${dayOfWeek} ${month} ${day}${daySuffix}, ${year}`
+    document.getElementById('time').innerText = `${hour}:${minute}${ampm}`
+    document.getElementById('date').innerText = `${dayOfWeek} ${month} ${day}${daySuffix}, ${year}`
     setTimeout(displayClock, 1000);
 }
 
