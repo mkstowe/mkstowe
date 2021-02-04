@@ -2,12 +2,12 @@
     <h2>Project Variegata</h2>
     <div class="seg">
         <p>The goal of Project Variegata is to explore ways that machine learning and other programming techniques can
-        be used to create comprehensive and engaging stories to be applied to various types of media (notably video
-        games).</p>
+            be used to create comprehensive and engaging stories to be applied to various types of media (notably video
+            games).</p>
 
-    <p>By automating the process of connecting plot points in different ways on the fly, the consumer can
-        have a compelling story presented to them that continually changes based on their choices. No two paths are
-        necessarily the same.</p>
+        <p>By automating the process of connecting plot points in different ways on the fly, the consumer can
+            have a compelling story presented to them that continually changes based on their choices. No two paths are
+            necessarily the same.</p>
     </div>
 
     <div class="seg">
@@ -36,10 +36,25 @@
                 href="https://www.bls.gov/data/" target="_blank">source</a>]</p>
         <p>The five largest companies in this industry are Comcast, The Walt Disney Co., Charter Communications,
             ViacomCBS, and Bolloré SA. [<a
-                    href="https://www.investopedia.com/articles/investing/020316/worlds-top-10-entertainment-companies-cmcsa-cbs.asp" target="_blank">source</a>]
+                    href="https://www.investopedia.com/articles/investing/020316/worlds-top-10-entertainment-companies-cmcsa-cbs.asp"
+                    target="_blank">source</a>]
         </p>
-        <p>Some existing products in this industry that could benefit most include video games, movies, TV shows,
-            books, and advertisements.</p>
+        <p>There are some products that attempt to do similar things as this project:</p>
+        <ul>
+            <li><a href="https://play.aidungeon.io/main/landing" target="_blank">AI Dungeon</a> is an automatic text
+                adventure game.</li>
+            <li>Botnick Studios created a tool for creating a story one word at a time, including the classic <a
+                    href="https://botnik.org/content/harry-potter.html" target="_blank">Harry Potter and the
+                Portrait of what Looked Like a Large Pile of Ash</a>.</li>
+            <li>This <a href="https://www.plot-generator.org.uk/" target="_blank">plot generator</a> uses a
+                Mad Libs-style approach to story generation.</li>
+            <li>Predictive text on many smartphones that predicts what you plan on typing next.</li>
+            <li>Google's Smart Compose that, like predictive text, suggests what to say next when writing emails or
+            docs.</li>
+        </ul>
+        <p>All of these products use similar ideas to generate stories or information based on the context given.
+            These types of products can always be improved to generate text that makes more grammatical sense, or
+            transition from one element to another more seamlessly.</p>
     </div>
 
     <div class="seg">
@@ -49,19 +64,42 @@
         <ul>
             <li><a href="https://patents.google.com/patent/US5805784A/en" target="_blank">US5805784A - Computer story
                 generation system and method using network of re-usable substories</a>
-                <p>Patent for a method of generating a story based on smaller substories.</p></li>
+                <p>Patent for a method of generating a story based on smaller substories. This method breaks a
+                    substory consisting of a few sentences into a matrix defining features such as who is involved,
+                    what specific topics they are saying, what specific events are happening, etc. This matrix allows
+                    characters and scenarios to be reusable, scenarios to be seamlessly transitioned between, and chosen
+                    by the algorithm on the fly during user-interaction.
+                </p></li>
             <li><a href="https://ojs.aaai.org/index.php/AAAI/article/view/8649" target="_blank">Story Generation with
                 Crowdsourced Plot Graphs</a>
-                <p>Generating stories from croudsourced data.</p></li>
+                <p>This paper uses a crowdsourced corpus of narrative examples of a new domain, a model can be
+                    automatically constructed to allow for samples to be taken based on desired criteria. A plot
+                    graph can then be constructed using this model to show the potential flow of the story. This
+                    graph includes required and optional events, events that strictly rely on one another, and
+                    events that must be mutually exclusive. Using this graph allows for a generated story from
+                    beginning to end that has relatively few inconsistencies.
+                </p></li>
             <li><a href="https://ojs.aaai.org/index.php/AAAI/article/view/5536" target="_blank">A Character-Centric
                 Neural Model for Automated Story Generation</a>
-                <p>Generate stories using predefined character and situations as input.</p></li>
+                <p>This paper focuses more on using a predefined character, context, and action to generate an
+                    event. The researchers compare quality of events generated with and without using these
+                    predefined traits as input. It was found that providing the characters-centric information
+                    from the beginning significantly increases a story's consistency and explainability.</p></li>
             <li><a href="https://ojs.aaai.org/index.php/AAAI/article/view/11430" target="_blank">Event
                 Representations for Automated Story Generation with Deep Neural Nets</a>
-                <p>Methods for converting a sentence into a structural story event and vice versa.</p></li>
+                <p>Using neural nets, these researchers use methods for converting basic information of an event
+                    into a sentence and vice versa. Starting with the original sentences, the method breaks them
+                    down in multiple steps, calculating a measurement for perplexity at each stage. It was found
+                    that they were able to automatically break the input down into general elements and
+                    significantly reduce the perplexity, allowing the generated event to be built up once again
+                    into new sentences to be added to the story.</p></li>
             <li><a href="https://www.aclweb.org/anthology/P09-1025.pdf" target="_blank">Learning to Tell Tales: A
                 Data-driven Approach to Story Generation</a>
-                <p>Restructure a story as a tree to make possible story paths more evident.</p></li>
+                <p>This paper takes a look at breaking down an input sentence or story and restructuring the
+                    various elements into a tree that can be traversed to create a new story. This allows a
+                    single data structure that can be reused to generate new scenarios each time depending on the
+                    path taken during the traversal. This method was found to produce stories that lack much
+                    variation from one another, and rather boring plots.</p></li>
         </ul>
 
         <details>
@@ -101,7 +139,9 @@
                     the Novelty of Computer-Generated Narratives Using Empirical Metrics</a></li>
                 <li><a href="http://ilitia.cua.uam.mx:8080/jspui/handle/123456789/622" target="_blank">A system for
                     evaluating novelty in computer generated narratives</a></li>
-                <li><a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.294.3949&rep=rep1&type=pdf#page=111" target="_blank">Illustrating a Computer Generated Narrative</a></li>
+                <li>
+                    <a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.294.3949&rep=rep1&type=pdf#page=111"
+                       target="_blank">Illustrating a Computer Generated Narrative</a></li>
                 <li><a href="https://essay.utwente.nl/56948/" target="_blank">The Plot Thickens : bringing structure
                     and meaning into automated story generation</a></li>
                 <li><a href="https://people.ict.usc.edu/gordon/public_html/publications/KDD-WS17.PDF"
