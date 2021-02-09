@@ -32,7 +32,16 @@ def timber():
 @mkstowe.app.route('/projects/variegata/', methods=['GET'])
 def variegata():
     """Display /projects/variegata/ route."""
-    context = {"title": "Project Variegata", "desc": "Project Variegata dev blog posts by Michael Stowe", "load_file": "variegata.html"}
+    context = {"title": "Project Variegata", "desc": "Project Variegata dev blog posts by Michael Stowe",
+               "load_file": "variegata.html"}
+    return flask.render_template("master.html", **context)
+
+
+@mkstowe.app.route('/projects/variegata/<year>/<month>/<day>/', methods=['GET'])
+def post(year, month, day):
+    """Display post on /projects/variegata/."""
+    context = {"title": "{}/{}/{}".format(year, month, day), "desc": "Project Variegata dev blog post by Michael "
+               "Stowe", "load_file": "variegata_posts/{}_{}_{}.html".format(year, month, day)}
     return flask.render_template("master.html", **context)
 
 
