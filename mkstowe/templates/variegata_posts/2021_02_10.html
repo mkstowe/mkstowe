@@ -1,0 +1,137 @@
+<div id="content">
+    <h2>February 10, 2021</h2>
+
+    <div class="seg">
+        <h3 class="blog_topic"><strong>Progress So Far</strong></h3>
+        <p>Up to this point, I have begun to read through more research and source code for similar projects.
+            Additionally, I have started building a Flask app to make working with all of the components more
+            manageable, gathering data, exploring story generation techniques, and spending lots of time on setup
+            and debugging.</p>
+
+        <p>The main technologies I have used so far include:</p>
+        <ul>
+            <li>Python/Flask</li>
+            <li>Selenium</li>
+            <li>json2html</li>
+            <li>SQLAlchemy/SQLite</li>
+        </ul>
+        <p>(More information on the roles of these technologies below)</p>
+    </div>
+
+    <div class="seg">
+        <h3 class="blog_topic"><strong>Story Generation</strong></h3>
+        <p>For the first development stage, I experimented with some fairly simple story generation techniques to
+            test the waters. A very basic way to generate a story programmatically is to define a list containing
+            each event in the plot. We can then simply pick random events from this list and chain them together to
+            create a plot.</p>
+
+        <div class="excerpt">
+            <p>Input:</p>
+            <ul class="code">
+                <li>[ 'The dog barked',</li>
+                <li>'The dog learned how to read',</li>
+                <li>'The dog put on a hat',</li>
+                <li>'The dog ran through the forest',</li>
+                <li>'The dog ate a shoe',</li>
+                <li>'The dog met a cat',</li>
+                <li>'The dog chased a squirrel',</li>
+                <li>'The dog recited act 3, scene 1 of Shakespeare's Hamlet' ]</li>
+            </ul>
+            <p>Output:</p>
+            <p><em>The dog barked. The dog recited act 3, scene 1 of Shakespeare's Hamlet. The dog put on a hat. The
+                dog chased a squirrel. The dog ate a shoe.</em></p>
+        </div>
+
+        <p>Obviously, this technique of story generation is not the most sophisticated. As expected, the results of
+            this approach give very messy stories that are not too great to read, and it relies heavily on the
+            quality of the initial events. It works as a starting point, but there's plenty we can do to improve.
+            One such improvement could be separating the individual pieces of information to be chained together. If
+            we want to choose a random character, time period, activity, etc., we can define possibilities for
+            each part and randomly choose every aspect of the event, rather than an entire predefined event as a
+            whole.</p>
+
+        <div class="excerpt">
+            <p>Input:</p>
+            <ul class="code">
+                <li>when = ['A few years ago', 'Yesterday', 'Last night', 'A long time ago', 'In 400 B.C.',
+                'Once upon a
+                    time']</li>
+                <li>who = ['a dog', 'a rabbit', 'an elephant', 'a mouse', 'a turtle', 'a child']</li>
+                <li>name = ['Billy', 'Chip Rockets', 'Austin', 'Mason', 'Sophie', 'Lydia']</li>
+                <li>residence = ['Michigan', 'Germany', 'Neptune', 'the ocean', 'Amazon Headquarters']</li>
+                <li>went = ['bed', 'school', 'work', 'the farm']</li>
+                <li>happened = ['forgot their own name', 'slept', 'solved a mystery', 'wrote a book']</li>
+            </ul>
+            <p>Output:</p>
+            <p><em>In 400 B.C., a rabbit named Chip Rockets that lived in the ocean went to school and solved a
+                mystery.</em></p>
+        </div>
+
+        <p>As we can see, this small update generated a sentence that is (in my opinion) much more varied and
+            interesting. Again, though, the quality of the output is completely dictated by the quality of the input
+            . The goal is to use virtually no hard-coded values, and to automatically produce cohesive stories on the
+            fly. That's where machine learning will come in! As I continue to research and experiment, I will
+            hopefully find certain machine learning techniques that will intelligently combine a large corpus of
+            events into much better stories.</p>
+    </div>
+
+    <div class="seg">
+        <h3 class="blog_topic"><strong>Gathering Content</strong></h3>
+        <p>In order to generate good stories, we need examples of good stories to begin with. In this context, a
+            "good" story is not necessarily one that is expertly written. It simply is one that has a cohesive plot
+            for a reader to follow. I plan on gathering two types of stories for two different tasks. For training a
+            model, we need plenty of stories and some corresponding tags. I have found a few datasets that seem
+            promising:</p>
+        <ul>
+            <li><a href="https://www.kaggle.com/Cornell-University/movie-dialog-corpus" target="_blank">Movie
+                Dialogue Corpus</a> - Over 300,000 lines of dialogue from over 600 movies</li>
+            <li><a href="https://www.kaggle.com/leangab/poe-short-stories-corpuscsv" target="_blank">E.A. Poe's
+                corpus of short stories</a> - Collection of entire short stories from Edgar Allen Poe</li>
+            <li><a href="https://www.kaggle.com/jannesklaas/scifi-stories-text-corpus" target="_blank">SciFi Stories
+                Text Corpus</a> - Collection of SciFi stories</li>
+            <li><a href="https://www.kaggle.com/jrobischon/wikipedia-movie-plots" target="_blank">Wikipedia Movie
+                Plots</a> - Wikipedia movie plot summaries for nearly 35,000 movies</li>
+            <li>More to come later!</li>
+        </ul>
+
+        <p>Each of these datasets include the genre of the source, and some include keywords to further classify
+            each text. This information will be very useful when it comes to training so that similar events can be
+            grouped together by keyword. For example, if the current event in a story has to do with zombies and
+            chainsaws, there's a good chance the model will want to pull the next event from a group that's
+            classified as horror.</p>
+
+        <p>An additional source will be choose your own adventure stories. These are unique in that the plot is not
+            linear like traditional stories. The (tentative) end goal of Project Variegata is essentially to generate
+            these types of stories on the fly, so what better place to look that ones that have already been
+            crafted! An excellent source of choose your own adventures is
+            <a href="http://chooseyourstory.com/" target="_blank">Choose Your Story</a>. This site consists of
+            user-submitted stories of numerous genres that are voted on by the community based on difficulty,
+            length, maturity, and overall quality. I spent some time perusing the source code for <a
+                    href="https://play.aidungeon.io/main/landing" target="_blank">AI Dungeon</a> (a project with
+            similar goals to this one but focusing more on text generation rather than structure), and I discovered
+            that they also use Choose Your Story as a source for their model.</p>
+
+        <p>Using a modified version of AI Dungeon's web scraper and the package <a
+                href="https://pypi.org/project/json2html/" target="_blank">json2html</a>, I am able to use <a
+                href="https://www.selenium.dev/" target="_blank">Selenium</a> to navigate through one of the choose
+            your own adventure stories, save it as a json file, and convert it into a tree-like HTML table (<a
+                    href="/projects/variegata/2021/02/10/example" target="_blank">example here</a>). This visual
+            representation of the tree structure will be great for testing purposes to see what paths the algorithm
+            is taking and for what reasons, in addition to using the tree for further model training.</p>
+    </div>
+
+    <div class="seg">
+        <h3 class="blog_topic"><strong>Going Forward</strong></h3>
+        <p>From this point, the key focus is getting the basic machine learning aspect set up so that I can begin
+            experimenting with various techniques and algorithms. TensorFlow and spaCy will probably a couple of the
+            most useful tools for this part.</p>
+        <p>While I have set up some database management for more efficiently managing all of the events to be
+            gathered (using SQLAlchemy and SQLite), there is still more to do before it can be useful in this
+            project. I also plan on using Python's multiprocessing library and/or Hadoop to collect numerous stories
+            from the web in parallel, as it can take a while for Selenium to go through all of the pages -
+            especially for stories with thousands of branches.</p>
+        <p>Lower on the list is to improve the tree visualization for the stories to make them easier to read and
+            navigate.</p>
+        <p>Stay tuned for more!</p>
+    </div>
+</div>

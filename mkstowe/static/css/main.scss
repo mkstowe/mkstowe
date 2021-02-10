@@ -263,6 +263,21 @@ figure {
   display: none;
 }
 
+.excerpt {
+  margin-left: 50px;
+  padding-left: 20px;
+  border-left: 5px solid rgba(175, 175, 175, 0.7);
+
+  .code {
+    font-family: monospace;
+    list-style-type: none;
+
+    li {
+      margin-bottom: 15px;
+    }
+  }
+}
+
 @media all and (min-width: 480px) {
   header {
     font-size: 20px;

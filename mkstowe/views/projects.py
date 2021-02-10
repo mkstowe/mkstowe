@@ -45,6 +45,14 @@ def post(year, month, day):
     return flask.render_template("master.html", **context)
 
 
+@mkstowe.app.route('/projects/variegata/<year>/<month>/<day>/example', methods=['GET'])
+def show_example(year, month, day):
+    """Display post on /projects/variegata/."""
+    context = {"title": "{}/{}/{}".format(year, month, day), "desc": "Project Variegata dev blog post by Michael "
+               "Stowe"}
+    return flask.render_template("variegata_posts/{}_{}_{}/example.html".format(year, month, day), **context)
+
+
 @mkstowe.app.route('/projects/cloud/', methods=['GET'])
 def cloud():
     """Display /projects/cloud/ route."""
