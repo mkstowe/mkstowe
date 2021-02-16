@@ -1,0 +1,108 @@
+<div id="content">
+    <h2>February 17, 2021</h2>
+
+    <div class="seg">
+        <h3 class="blog_topic"><strong>Progress So Far</strong></h3>
+        <p>This week I explored various algorithms for extracting keywords from a text. Additionally, I continued to
+            build the Flask app to integrate this feature and prepare for next week's additions.</p>
+
+        <p>The main technologies I have used so far include:</p>
+        <ul>
+            <li>Python/Flask</li>
+            <li>Gensim</li>
+            <li>NLTK</li>
+        </ul>
+    </div>
+
+    <div class="seg">
+        <h3 class="blog_topic"><strong>Keyword Extraction</strong></h3>
+        <p>In order to be able to classify the stories we've been pulling from the web, I needed a good way to extract
+            certain keywords from the text. Doing this will allow the model to be able to create a dictionary to look up
+            which stored documents are associated with a given phrase or genre. For example, if the current event that
+            is being delivered has to do with a mob boss performing slam poetry, our model can use this dictionary to
+            search for events that have associated keywords such as "mafia", "poem", "crime", etc.</p>
+
+        <p>Digging deeper into how this actually works, there are a number of algorithms that are often used for keyword
+            extraction. The ones I experimented with are Word Frequency, TF-IDF, RAKE, and TextRank. Before I used any
+            of them, however, I needed to do some text preprocessing. This is a technique for making all of the text
+            consistent. We don't want the algorithm to treat the same word differently when it has different
+            capitalization or accents, for example.</p>
+
+        <p>The steps I took to preprocess the text are:</p>
+        <ul>
+            <li>Make all characters lowercase.</li>
+            <li>Strip any unnecessary whitespace.</li>
+            <li>Expand contractions (Ex. "won't" becomes "will not").</li>
+            <li>Remove punctuation and numerical digits.</li>
+            <li>Remove accents (Ex. "café" becomes "cafe".</li>
+            <li>Remove stopwords that just act as filler such as "this" and "because".</li>
+        </ul>
+
+        <p>Now on to the actual algorithms.</p>
+
+        <h4><strong>Word Frequency</strong></h4>
+        <p>Word frequency is the most simple of the algorithms. It simply counts how many times each word appears in a
+            text, and returns the ones that occur most. Easy peasy.</p>
+
+        <h4><strong>TF-IDF</strong></h4>
+        <p>Term Frequency - Inverse Document Frequency, or TF-IDF, takes the idea of Word Frequency and makes it a bit
+            more sophisticated. Rather than just looking at one document, it takes all documents available into account.
+            It counts the number of occurrences a word has in its present document, as well as how many documents in
+            which that word appears in total. Using these two values, it can then determine how relevant a word is based
+            on the query.</p>
+
+        <h4><strong>RAKE</strong></h4>
+        <p>Rapid Automatic Keyword Extraction, or RAKE is less about finding individual keywords, but rather groups of
+            words to form key phrases. It splits a sentence into individual words to create a matrix that
+            shows how many times each word occurs next to each other word. Using some statistical analysis, it figures
+            out which words fit in best together. Using the example that
+            <a href="https://monkeylearn.com/keyword-extraction/" target="_blank">MonkeyLearn</a> gives, the
+            (unprocessed) sentence "Keyword extraction is not that difficult after all. There are many libraries that
+            can help you with keyword extraction. Rapid automatic keyword extraction is one of those." would yield the
+            phrases "rapid automatic keyword extraction", "keyword extraction", and "many libraries".</p>
+
+        <h4><strong>TextRank</strong></h4>
+        <p>TextRank is quite a bit more advanced than RAKE. It creates a directed graph using each word in the text as a
+            vertex. Similarly to RAKE, it then connects each word to each other word based on whether they appear next
+            to each other in the text, in this case creating edges between the verticies. It then determines the overall
+            weight of each vertex based on the part of speech of the word, and how many incoming vs. outgoing edges it
+            has. Finally, it puts these values into a formula to give each word a score, resulting in a list of words or
+            phrases.</p>
+        <p>Fun Fact: TextRank is inspired by PageRank, which is a similar algorithm used by Google to determine which
+            pages to show based on a search query.</p>
+
+        <br>
+        <p>While all of the listed algorithms gave promising results, I ended up using the TextRank algorithm (using the
+            implementation from the <a href="https://radimrehurek.com/gensim/" target="_blank">Gensim</a> library).
+            However, once I compile more documents and continue to integrate this functionality to the overall project,
+            I suspect that TF-IDF may end up working better as I can essentially create a mini search engine for the
+            events.</p>
+
+        <p>To show a larger example of TextRank, these are some top keywords extracted from the <a
+                href="/projects/variegata/2021/02/10/example" target="_blank">example story</a> from last week:</p>
+        <ul>
+            <li>behemoth</li>
+            <li>fight</li>
+            <li>health</li>
+            <li>mana</li>
+            <li>casts</li>
+            <li>attack</li>
+            <li>stealing</li>
+            <li>thunder</li>
+            <li>wizard</li>
+            <li>heal</li>
+        </ul>
+
+        <p>Without even reading the story, it's easy to see from the keywords that it takes place in a more fantastical
+            setting and involves a lot of combat.</p>
+    </div>
+
+    <div class="seg">
+        <h3 class="blog_topic"><strong>Going Forward</strong></h3>
+        <p>The next step is to actually create the dictionary of words and documents so that the model can query them.
+            This may be done with something such as SQL or a Pandas dataframe. The most efficient method will be
+            dependent on how I decide to structure all of the data.</p>
+        <p>From there, it will likely be time to start building a system of building the stories' plot trees and
+            gathering events in realtime.</p>
+    </div>
+</div>
