@@ -1,0 +1,131 @@
+<div id="content">
+    <h2>Pre-Alpha</h2>
+
+    <div class="seg">
+        <h3 class="blog_topic"><strong>Getting Familiar</strong></h3>
+        <p>Before I could get working on my assigned tasks for the pre-alpha sprint, I had to get familiar with the
+            existing code base. A working prototype of the project had already been created prior to my involvement,
+            so I spent some time reading through what my teammates had already written to ensure I had a good idea of
+            what was going on. Getting used to the code base and becoming acquainted with the preferred style and
+            coding paradigms is essential when joining any project and making sure things go smoothly.</p>
+        <p>In addition to reading the code, I also spent time looking through Confluence and Jira to read in more
+            detail the things that were discussed during the weekly meetings. I read through the design documents,
+            taking note of how I figured would be the best way to approach the programming aspect of the different
+            features to be implemented.</p>
+        <p>Time: 4 hours</p>
+    </div>
+
+    <div class="seg">
+        <h3 class="blog_topic"><strong>Operating System Woes</strong></h3>
+        <p>When it comes to programming, I am very much a fan of Linux over Windows. With that, however, comes some
+            compatibility issues. I unfortunately had to spend a lot of time figuring out how to get Unity to work
+            with my system. Once I finally got it Unity installed everything seemed a-okay! But as soon as I
+            launched the game for the first time, everything broke and I had no choice but to wallow in self pity. I
+            ended up just reinstalling Windows and dealing with it.</p>
+        <p>Time: 5 hours</p>
+    </div>
+
+    <div class="seg">
+        <h3 class="blog_topic"><strong>Quick Melee</strong></h3>
+        <p>The first task I worked on was the quick melee mechanic. This task took a bit longer than anticipated,
+            largely due to the fact that I wanted to pay extra close attention to making sure my code adhered to the
+            style guides of the studio.</p>
+        <p>This task consisted of implementing a quick melee attack for the player character. The main inspiration
+            for this mechanic is Lucio's "boop" attack from Overwatch. Essentially when activating the quick melee,
+            the character emits a short-ranged burst of force in front of them. Any enemies within its range will
+            take damage and be knocked back. The mechanic has an adjustable damage, range, knockback strength, and
+            cooldown period that will later be adjusted to be balanced once we being doing more playtests.</p>
+        <p>Time: 4.5 hours</p>
+
+        <video autoplay controls loop muted>
+            <source src="{{ url_for('static', filename='media/code/cloud/pre-alpha/melee.mp4') }}" type="video/mp4"/>
+        </video>
+    </div>
+
+    <div class="seg">
+        <h3 class="blog_topic"><strong>Melee to Air</strong></h3>
+        <p>Next up was to add the "melee to air" mechanic to the quick melee. This is basically where, if the player
+            successfully melees an enemy while the player is in the air, they are launched vertically upward around
+            3-4x their normal jump height. This can be used as a platforming mechanic to get to some hard-to-reach
+            areas that normal jumping would not be good enough for.</p>
+        <p>The main issue I ran in to during this implementation was being able to accurately determine if the
+            player is grounded. When diving into the code and using lots of logging and temporary variables for
+            debugging, I determined that there was some odd behavior going on in the existing movement system. This
+            bugginess prevents normal grounded checking to sometimes fail, meaning that it is very difficult to tell
+            whether or not the player is in the air at any given time. This problem will likely be fixed for next
+            sprint once we revamp some aspects of the movement system.</p>
+        <p>Time: 3 hours</p>
+
+        <video autoplay controls loop muted>
+            <source src="{{ url_for('static', filename='media/code/cloud/pre-alpha/melee_to_air.mp4') }}"
+                    type="video/mp4"/>
+        </video>
+    </div>
+
+    <div class="seg">
+        <h3 class="blog_topic"><strong>Melee VFX</strong></h3>
+        <p>The next step was to incorporate the visual effects that one of the talented individuals on the VFX team
+            implemented. Overall, this was a pretty simple process. There was one issue where the camera didn't
+            properly render the particle effects used for the effect when in some orientations, but the VFX artist
+            was able to fix it pretty easily.</p>
+        <p>Time: 1.5 hours</p>
+
+        <img src="{{ url_for('static', filename='media/code/cloud/pre-alpha/melee_vfx.gif') }}"/>
+    </div>
+
+    <div class="seg">
+        <h3 class="blog_topic"><strong>Glide</strong></h3>
+        <p>The final task I worked on this sprint was the glide. This is where when the player is falling, they can
+            hold the jump key to glide through the air, falling to the ground at a slower rate. Like melee to air,
+            this mechanic will probably need to be updated once the movement system is updated, but for now it is
+            working as intended with an adjustable glide duration and fall rate.</p>
+        <p>Time: 2 hours</p>
+
+        <video autoplay controls loop muted>
+            <source src="{{ url_for('static', filename='media/code/cloud/pre-alpha/glide.mp4') }}" type="video/mp4"/>
+        </video>
+    </div>
+
+    <div class="seg">
+        <h3 class="blog_topic"><strong>Total Time</strong></h3>
+        <table>
+            <tr>
+                <th>Task</th>
+                <th>Time</th>
+            </tr>
+            <tr>
+                <td>Getting Familiar</td>
+                <td>4 hours</td>
+            </tr>
+            <tr>
+                <td>OS Woes</td>
+                <td>5 hours</td>
+            </tr>
+            <tr>
+                <td>Quick Melee</td>
+                <td>4.5 hours</td>
+            </tr>
+            <tr>
+                <td>Melee to Air</td>
+                <td>3 hours</td>
+            </tr>
+            <tr>
+                <td>Melee VFX</td>
+                <td>1.5 hours</td>
+            </tr>
+            <tr>
+                <td>Glide</td>
+                <td>2 hours</td>
+            </tr>
+            <tr>
+                <td>Studio/Individual Meetings</td>
+                <td>4.5 hours</td>
+            </tr>
+            <tr><td class="spacer"></td></tr>
+            <tr>
+                <td><strong>Total</strong></td>
+                <td>24.5 hours</td>
+            </tr>
+        </table>
+    </div>
+</div>

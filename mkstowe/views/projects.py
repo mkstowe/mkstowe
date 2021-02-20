@@ -4,7 +4,8 @@ URLs include:
 /projects/
 /projects/metroid/
 /projects/timber/
-/projects/variegata
+/projects/variegata/
+/projects/cloud/
 """
 import flask
 import mkstowe
@@ -38,7 +39,7 @@ def variegata():
 
 
 @mkstowe.app.route('/projects/variegata/<year>/<month>/<day>/', methods=['GET'])
-def post(year, month, day):
+def variegata_post(year, month, day):
     """Display post on /projects/variegata/."""
     context = {"title": "{}/{}/{}".format(year, month, day), "desc": "Project Variegata dev blog post by Michael "
                "Stowe", "load_file": "variegata_posts/{}_{}_{}.html".format(year, month, day)}
@@ -57,4 +58,12 @@ def show_example(year, month, day):
 def cloud():
     """Display /projects/cloud/ route."""
     context = {"title": "Project Cloud", "desc": "WolverineSoft Project Cloud dev blog posts by Michael Stowe", "load_file": "cloud.html"}
+    return flask.render_template("master.html", **context)
+
+
+@mkstowe.app.route('/projects/cloud/<sprint>/', methods=['GET'])
+def cloud_post(sprint):
+    """Display post on /projects/cloud/."""
+    context = {"title": sprint, "desc": "Project Cloud dev blog post by Michael Stowe",
+               "load_file": "cloud_posts/{}.html".format(sprint.lower())}
     return flask.render_template("master.html", **context)

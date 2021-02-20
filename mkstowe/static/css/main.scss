@@ -119,6 +119,12 @@ img {
   margin: 0 auto;
 }
 
+video {
+  display: block;
+  width: 80%;
+  margin: 0 auto;
+}
+
 footer {
   display: block;
   position: fixed;
@@ -275,6 +281,29 @@ figure {
     li {
       margin-bottom: 15px;
     }
+  }
+}
+
+table {
+  border-collapse: collapse;
+
+  th {
+    text-align: left;
+  }
+
+  td {
+    padding-right: 50px;
+    padding-top: 10px;
+  }
+
+  tr:last-child {
+    td {
+      border-top: 3px solid black;
+    }
+  }
+
+  .spacer {
+    padding-top: 20px;
   }
 }
 
