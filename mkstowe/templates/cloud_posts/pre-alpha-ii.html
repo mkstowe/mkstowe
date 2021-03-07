@@ -1,0 +1,114 @@
+<div id="content">
+    <h2>Pre-Alpha II</h2>
+
+    <div class="seg">
+        <h3 class="blog_topic"><strong>Skill System</strong></h3>
+        <p>The first thing I worked on for this sprint was collaborating with one of my fellow programmers to get a
+            common skill system going so that everything is consistent between Strength, Agility, and Perception
+            skills. We discussed numerous different designs to try to maximize ease of use while also keeping all of
+            our scripts and game object clean and tidy. Once we decided on how we were going to do it, I set it all
+            up using the existing skill manager script written previously, and got the first of the strangth skills
+            underway.</p>
+        <p>Time: 3 hours</p>
+    </div>
+
+    <div class="seg">
+        <h3 class="blog_topic"><strong>Revenge Skill</strong></h3>
+        <p>The first of the strength skills that the player can unlock is Revenge. This allows the player to
+            prioritize close-quarters combat in a way that is not too deadly. Every time the player takes damage,
+            they increase an amount of charge to be used toward their Revenge skill. When activating the skill, a
+            set proportion of the charge is used and multiplied to reflect damage back to all enemies within range.
+            This means that the more damage the player takes, the more damage (and larger range) they can inflict
+            back to their enemies.</p>
+        <p>Part of the process of getting the functionality for this skill up and running was to utilize the
+            EventBus script to publish certain events from some scripts, and subscribe to them in others so that all
+            of the scripts could communicate without being coupled together - using the Pub/Sub design pattern.</p>
+        <img src="{{ url_for('static', filename='media/code/cloud/pre-alpha/revenge.gif') }}"/>
+        <p>Like before, I worked with one of the VFX artists to implement their art into the script so that it is
+            more apparent and satisfying to the player when they use their ability.</p>
+        <p>Time: 4 hours</p>
+    </div>
+
+    <div class="seg">
+        <h3 class="blog_topic"><strong>Equipment System</strong></h3>
+        <p>Next up, I created an equipment system so that, like the skill system, all of the player's equipment
+            functionality is organized and consistent across scripts. To do this, I heavily referenced the skill
+            manager and skill system mentioned previously, and rewrote parts to cater it more specifically to the
+            player's equipment/inventory needs.</p>
+        <p>Time: 2 hours</p>
+    </div>
+
+    <div class="seg">
+        <h3 class="blog_topic"><strong>Blademail</strong></h3>
+        <p>The first piece of equipment for the player to obtain is Blademail. This is relatively similar to the
+            Revenge skill, but with some key differences. When they player activates their Blademail, a portion of any
+            incoming damage is automatically reflected back to the enemy that dealt it for a given duration. Unlike
+            Revenge, this only affects the enemy that deals the damage, rather than all enemies in range.
+            Additionally, there is no charging system like with Revenge. The damage reflected relies on the amount
+            of damage received.</p>
+        <p>Time: 3 hours</p>
+    </div>
+
+    <div class="seg">
+        <h3 class="blog_topic"><strong>Grapple</strong></h3>
+        <p>The most time-consuming task of this sprint was the grapple ability. This is a more advanced platforming
+            mechanic available to the player that allows them to "throw" a grappling hook toward a surface, and if
+            they hit it, the player then begins moving toward that point. Implementing this mechanic involved a lot
+            of research on the different physics-based approaches in Unity. In my experience, dealing with physics
+            in Unity often leads to some unexpected bugs, and that was certainly the case here. After working with
+            it for a while, though, I was able to get something that works pretty well!</p>
+        <p>Time: 5 hours</p>
+    </div>
+
+    <div class="seg">
+        <h3 class="blog_topic"><strong>Debugging</strong></h3>
+        <p>Lastly, I spent a chunk of time fixing bugs that either I discovered, or were brought to my attention by
+            others. Using a fix discovered by another programmer, I was finally able to get the grounding issues on
+            my air-based mechanics fixed. I also swapped a bit of logic in some scripts out with Pub/Sub
+            implementations to clean everything up.</p>
+        <p>Time: 2.5 hours</p>
+    </div>
+
+    <div class="seg">
+        <h3 class="blog_topic"><strong>Total Time</strong></h3>
+        <table>
+            <tr>
+                <th>Task</th>
+                <th>Time</th>
+            </tr>
+            <tr>
+                <td>Skill System</td>
+                <td>3 hours</td>
+            </tr>
+            <tr>
+                <td>Revenge Skill</td>
+                <td>4 hours</td>
+            </tr>
+            <tr>
+                <td>Equipment System</td>
+                <td>2 hours</td>
+            </tr>
+            <tr>
+                <td>Blademail</td>
+                <td>3 hours</td>
+            </tr>
+            <tr>
+                <td>Grapple</td>
+                <td>5 hours</td>
+            </tr>
+            <tr>
+                <td>Debugging</td>
+                <td>2.5 hours</td>
+            </tr>
+            <tr>
+                <td>Studio/Individual Meetings</td>
+                <td>5.5 hours</td>
+            </tr>
+            <tr><td class="spacer"></td></tr>
+            <tr>
+                <td><strong>Total</strong></td>
+                <td>25 hours</td>
+            </tr>
+        </table>
+    </div>
+</div>
