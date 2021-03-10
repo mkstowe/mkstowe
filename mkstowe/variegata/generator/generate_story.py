@@ -20,7 +20,7 @@ def events_to_dict():
 
 
 model = Word2Vec.load(str(mkstowe.app.config["VARIEGATA_ROOT"] / 'model' / 'variegata.model'))
-# events_dict = events_to_dict()
+events_dict = events_to_dict()
 
 
 def generate_story(num_nodes):
