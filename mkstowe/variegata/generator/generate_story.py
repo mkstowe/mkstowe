@@ -1,7 +1,7 @@
 import pathlib
 import os
 import random
-from gensim.models import Word2Vec
+# from gensim.models import Word2Vec
 import mkstowe.variegata
 import csv
 
