@@ -1,0 +1,62 @@
+<div id="content">
+    <h2>March 10, 2021</h2>
+
+    <div class="seg">
+        <h3 class="blog_topic"><strong>Progress So Far</strong></h3>
+        <p>This week was spent getting the first iteration of the actual story generator up and running. It's rough,
+            but it's something!</p>
+
+        <p>The main technologies used for this step include:</p>
+        <ul>
+            <li>Python/Flask</li>
+            <li>node2vec</li>
+        </ul>
+    </div>
+
+    <div class="seg">
+        <h3 class="blog_topic"><strong>The Model</strong></h3>
+        <p>The biggest challenge of this iteration was getting the initial model to behave as expected. I did a lot
+            of research on different approaches to graph-based machine learning, and ultimately settled on <a
+                    href="https://snap.stanford.edu/node2vec/" target="_blank">node2vec</a> as the main algorithm.
+            This is a variation of the <a
+                    href="https://towardsdatascience.com/introduction-to-word-embedding-and-word2vec-652d0c2060fa"
+                    target="_blank">word2vec</a> family of algorithms that is most commonly used for text prediction
+            applications. Node2vec abstracts this idea in order to work on general graphs. It allows us to be able
+            to embed new nodes into a graph based on the sequences it generates by performing random walks on the
+            graph.</p>
+        <p>In the context of this project, what it means is that by inputting an arbitrary number of story graphs
+            (where nodes represent events in the story), we can train a model to tell us which nodes - or events -
+            are most similar to the one we are currently on.</p>
+    </div>
+
+    <div class="seg">
+        <h3 class="blog_topic"><strong>The Generator</strong></h3>
+        <p>Using our trained model, we can generate new stories! Currently, the model is only trained on the labels
+            of the nodes, and not the actual content associated with them. This means that the generator can only
+            create a story using events existing within one story at a time - it cannot merge stories together. The
+            way it works is we choose a random event from our master list of events created when scraping stories,
+            we then give this event to our model, and it gives us a list of events that are most similar to the
+            current event.</p>
+        <p>When choosing which node to link to next from the list of similar nodes, it may be tempting to always
+            pick the one that is <em>most</em> similar. However, this can cause some issues. Since our story graphs
+            are bidirectional - meaning an action can move us to forward or backward in terms of events - two nodes
+            can link to each other and cause an endless loop. If we reach one of these and always choose the most
+            similar node to be next, we could end up just moving back and forth between these events indefinitely.
+            To solve this, our generator will pick a random node among the five most similar nodes returned. This
+            way, there are more opportunities to get out of these event loops.</p>
+        <p>For now, the generator creates a story consisting of ten events. There is not much user interactivity
+            involved, but this will change in future iterations.</p>
+    </div>
+
+    <div class="seg">
+        <p>Finally, you can try out the generator <a href="/variegata/story/" target="_blank">here</a>.</p>
+    </div>
+
+    <div class="seg">
+        <h3 class="blog_topic"><strong>Moving Forward</strong></h3>
+        <p>For the next iteration, I plan on training the model on the content of the events rather than labels so
+            that it can create stories with a much larger pool of events - likely by breaking events down into
+            keywords and creating subgraphs from those. Additionally, I hope to get actions working so that it's
+            more like the text adventures, and less a wall of text.</p>
+    </div>
+</div>

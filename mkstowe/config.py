@@ -6,7 +6,9 @@ import pathlib
 APPLICATION_ROOT = '/'
 
 # File Upload to var/uploads/
-MKSTOWE_ROOT = pathlib.Path(__file__).resolve().parent.parent
-UPLOAD_FOLDER = MKSTOWE_ROOT/'var'/'uploads'
-ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif'])
+MKSTOWE_ROOT = pathlib.Path(__file__).resolve().parent
+STATIC_ROOT = MKSTOWE_ROOT/'static'
+ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
 MAX_CONTENT_LENGTH = 16 * 1024 * 1024
+
+VARIEGATA_ROOT = MKSTOWE_ROOT/'variegata'

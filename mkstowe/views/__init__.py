@@ -5,3 +5,4 @@ from mkstowe.views.projects import projects
 from mkstowe.views.experience import experience
 from mkstowe.views.resume import resume
 from mkstowe.views.startpage import start
+from mkstowe.views.variegata_story import story
